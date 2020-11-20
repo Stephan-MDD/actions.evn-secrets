@@ -24,7 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: echo Hello world $SECRET
     - run: npm install
     - run: npm test
     env:
-      CI: true
+      SECRET: ${{ secrets.SECRET }}
